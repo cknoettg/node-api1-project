@@ -1,0 +1,27 @@
+{
+  "name": "api1-project",
+  "version": "1.0.0",
+  "description": "Example using NPM and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cknoettg/node-api1-project.git"
+  },
+  "author": "Corey Knoettgen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cknoettg/node-api1-project/issues"
+  },
+  "homepage": "https://github.com/cknoettg/node-api1-project#readme",
+  "dependencies": {
+    "gitignore": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
