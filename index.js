@@ -78,31 +78,6 @@ server.post('/api/users', (req, res) => {
     }
   });
 
-  //UPDATE - PATCH Requests
-  server.patch('/api/users/:id', (req, res) => {
-    const { id, name, bio } = req.params;
-    const changes = req.body;
-  
-    let found = users.find(user => user.id === id)
-  
-    if (!found) {
-      res.status(404).json({ message: "The user with the specified ID does not exist." })
-    }
-  
-    if (!name || !bio) {
-      res.status(400).json({ errorMessage: "Please provide name and bio for the user." })
-    }
-  
-    if (!changes) {
-      res.status(500).json({ errorMessage: "The user information could not be modified." })
-    }
-  
-    if (found) {
-      Object.assign(found, changes)
-      res.status(200).json(found)
-    }
-  });
-
   //UPDATE - PUT Requests
   server.put('/api/users/:id', (req, res) => {
     const { id, name, bio } = req.params;
@@ -116,7 +91,7 @@ server.post('/api/users', (req, res) => {
       res.status(200).json(users[index]);
     }
   
-    if (!index) {
+    if (!id) {
       res.status(404).json({ message: "The user with the specified ID does not exist." })
     }
   
